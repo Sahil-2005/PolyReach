@@ -8,7 +8,7 @@ export function Login() {
   const handleSubmit = (e) => {
     e.preventDefault();
     // In a real app, handle authentication here
-    navigate('/');
+    navigate('/dashboard');
   };
 
   return (

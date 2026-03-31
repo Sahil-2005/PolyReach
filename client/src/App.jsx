@@ -9,17 +9,20 @@ import { Campaigns } from './pages/Campaigns';
 import { Settings } from './pages/Settings';
 import { Login } from './pages/Login';
 import { Register } from './pages/Register';
+import { Landing } from './pages/Landing';
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
+        <Route path="/" element={<Landing />} />
+        
         <Route element={<AuthLayout />}>
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
         </Route>
         
-        <Route path='/' element={<MainLayout />}>
+        <Route path='/dashboard' element={<MainLayout />}>
           <Route index element={<Dashboard />} />
           <Route path='contacts' element={<Contacts />} />
           <Route path='templates' element={<Templates />} />

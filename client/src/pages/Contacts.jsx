@@ -28,7 +28,7 @@ export function Contacts() {
     <div className="space-y-6">
       {/* Header Actions */}
       <div className="flex items-center justify-between">
-        <h2 className="text-xl font-semibold text-slate-800">Contact Management</h2>
+        <h2 className="text-xl font-semibold text-white">Contact Management</h2>
         <Button onClick={() => setIsMappingModalOpen(true)}>
           <Plus className="w-4 h-4 mr-2" />
           Add Contacts
@@ -40,17 +40,17 @@ export function Contacts() {
         <CardContent className="p-8">
           <div 
             className={`border-2 border-dashed rounded-xl p-10 text-center transition-colors ${
-              isDragging ? 'border-indigo-500 bg-indigo-50' : 'border-slate-300 hover:border-slate-400 bg-slate-50'
+              isDragging ? 'border-indigo-500 bg-indigo-500/10' : 'border-slate-700 hover:border-slate-600 bg-slate-900/50'
             }`}
             onDragOver={(e) => { e.preventDefault(); setIsDragging(true); }}
             onDragLeave={() => setIsDragging(false)}
             onDrop={(e) => { e.preventDefault(); setIsDragging(false); setIsMappingModalOpen(true); }}
           >
-            <div className="w-14 h-14 bg-white rounded-full shadow-sm flex items-center justify-center mx-auto mb-4 border border-slate-200">
-              <UploadCloud className="w-6 h-6 text-indigo-600" />
+            <div className="w-14 h-14 bg-slate-800 rounded-full shadow-sm flex items-center justify-center mx-auto mb-4 border border-slate-700">
+              <UploadCloud className="w-6 h-6 text-indigo-400" />
             </div>
-            <h3 className="text-lg font-medium text-slate-900 mb-1">Upload CSV or Excel File</h3>
-            <p className="text-slate-500 text-sm mb-4">Drag and drop your file here, or click to browse</p>
+            <h3 className="text-lg font-medium text-slate-200 mb-1">Upload CSV or Excel File</h3>
+            <p className="text-slate-400 text-sm mb-4">Drag and drop your file here, or click to browse</p>
             <Button variant="outline" size="sm">Browse Files</Button>
           </div>
         </CardContent>
@@ -58,8 +58,8 @@ export function Contacts() {
 
       {/* Data Table */}
       <Card>
-        <div className="border-b border-slate-100 flex items-center justify-between p-4 px-6">
-          <h3 className="font-semibold text-slate-800">All Contacts ({mockContacts.length})</h3>
+        <div className="border-b border-slate-800 flex items-center justify-between p-4 px-6">
+          <h3 className="font-semibold text-white">All Contacts ({mockContacts.length})</h3>
         </div>
         <Table>
           <TableHeader>
@@ -74,7 +74,7 @@ export function Contacts() {
           <TableBody>
             {mockContacts.map((contact) => (
               <TableRow key={contact.id}>
-                <TableCell className="font-medium text-slate-900">
+                <TableCell className="font-medium text-slate-200">
                   {contact.firstName} {contact.lastName}
                 </TableCell>
                 <TableCell>{contact.email}</TableCell>
@@ -101,20 +101,20 @@ export function Contacts() {
         className="max-w-2xl"
       >
         <div className="mt-2">
-          <p className="text-sm text-slate-500 mb-4">
+          <p className="text-sm text-slate-400 mb-4">
             Match the columns from your uploaded file to the system fields.
           </p>
           
           <div className="space-y-4">
             {mockHeaders.map((header, idx) => (
-              <div key={idx} className="flex items-center gap-4 bg-slate-50 p-3 rounded-lg border border-slate-100">
+              <div key={idx} className="flex items-center gap-4 bg-slate-800/50 p-3 rounded-lg border border-slate-700">
                 <div className="flex-1 flex items-center gap-2">
                   <FileSpreadsheet className="w-4 h-4 text-slate-400" />
-                  <span className="text-sm font-medium text-slate-700">{header}</span>
+                  <span className="text-sm font-medium text-slate-300">{header}</span>
                 </div>
-                <div className="text-slate-400">→</div>
+                <div className="text-slate-500">→</div>
                 <div className="flex-1">
-                  <select className="w-full text-sm bg-white border border-slate-300 rounded-md py-2 px-3 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                  <select className="w-full text-sm bg-slate-900 border border-slate-700 text-white rounded-md py-2 px-3 focus:outline-none focus:ring-2 focus:ring-indigo-500">
                     <option value="">Select a field...</option>
                     {systemFields.map(field => (
                       <option key={field} value={field}>{field}</option>
@@ -125,7 +125,7 @@ export function Contacts() {
             ))}
           </div>
 
-          <div className="mt-6 flex items-center justify-end gap-3 pt-4 border-t border-slate-100">
+          <div className="mt-6 flex items-center justify-end gap-3 pt-4 border-t border-slate-800">
             <Button variant="ghost" onClick={() => setIsMappingModalOpen(false)}>Cancel</Button>
             <Button onClick={() => setIsMappingModalOpen(false)}>Import Contacts</Button>
           </div>

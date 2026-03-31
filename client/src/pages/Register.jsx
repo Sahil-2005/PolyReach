@@ -8,7 +8,7 @@ export function Register() {
   const handleSubmit = (e) => {
     e.preventDefault();
     // In a real app, handle registration here
-    navigate('/');
+    navigate('/dashboard');
   };
 
   return (

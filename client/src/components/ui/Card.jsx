@@ -4,7 +4,7 @@ import { cn } from '../../utils/cn';
 export function Card({ className, children, ...props }) {
   return (
     <div
-      className={cn("bg-white rounded-xl border border-slate-200 shadow-sm", className)}
+      className={cn("bg-slate-900 rounded-xl border border-slate-800 shadow-sm", className)}
       {...props}
     >
       {children}
@@ -14,7 +14,7 @@ export function Card({ className, children, ...props }) {
 
 export function CardHeader({ className, children, ...props }) {
   return (
-    <div className={cn("px-6 py-4 border-b border-slate-100", className)} {...props}>
+    <div className={cn("px-6 py-4 border-b border-slate-800", className)} {...props}>
       {children}
     </div>
   );
@@ -22,7 +22,7 @@ export function CardHeader({ className, children, ...props }) {
 
 export function CardTitle({ className, children, ...props }) {
   return (
-    <h3 className={cn("text-lg font-semibold text-slate-800", className)} {...props}>
+    <h3 className={cn("text-lg font-semibold text-white", className)} {...props}>
       {children}
     </h3>
   );
