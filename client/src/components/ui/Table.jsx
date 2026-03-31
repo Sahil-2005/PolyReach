@@ -3,8 +3,8 @@ import { cn } from '../../utils/cn';
 
 export function Table({ className, children, ...props }) {
   return (
-    <div className="w-full overflow-x-auto">
-      <table className={cn("w-full text-sm text-left text-slate-400", className)} {...props}>
+    <div className="w-full overflow-x-auto rounded-2xl border border-white/5 bg-card/30 backdrop-blur-sm">
+      <table className={cn("w-full text-sm text-left text-muted-foreground", className)} {...props}>
         {children}
       </table>
     </div>
@@ -13,7 +13,7 @@ export function Table({ className, children, ...props }) {
 
 export function TableHeader({ className, children, ...props }) {
   return (
-    <thead className={cn("text-xs text-slate-400 uppercase bg-slate-900/50 border-b border-slate-800", className)} {...props}>
+    <thead className={cn("text-[10px] text-muted-foreground uppercase tracking-widest bg-white/5 border-b border-white/5", className)} {...props}>
       {children}
     </thead>
   );
@@ -21,7 +21,7 @@ export function TableHeader({ className, children, ...props }) {
 
 export function TableBody({ className, children, ...props }) {
   return (
-    <tbody className={cn("divide-y divide-slate-800", className)} {...props}>
+    <tbody className={cn("divide-y divide-white/5", className)} {...props}>
       {children}
     </tbody>
   );
@@ -29,7 +29,7 @@ export function TableBody({ className, children, ...props }) {
 
 export function TableRow({ className, children, ...props }) {
   return (
-    <tr className={cn("bg-slate-900 hover:bg-slate-800/50 transition-colors", className)} {...props}>
+    <tr className={cn("hover:bg-white/5 transition-colors duration-200 group/row", className)} {...props}>
       {children}
     </tr>
   );
@@ -37,7 +37,7 @@ export function TableRow({ className, children, ...props }) {
 
 export function TableHead({ className, children, ...props }) {
   return (
-    <th className={cn("px-6 py-4 font-medium text-slate-300 whitespace-nowrap", className)} {...props}>
+    <th className={cn("px-6 py-5 font-bold whitespace-nowrap", className)} {...props}>
       {children}
     </th>
   );
@@ -45,8 +45,8 @@ export function TableHead({ className, children, ...props }) {
 
 export function TableCell({ className, children, ...props }) {
   return (
-    <td className={cn("px-6 py-4", className)} {...props}>
+    <td className={cn("px-6 py-4 text-foreground/80 group-hover/row:text-foreground transition-colors", className)} {...props}>
       {children}
     </td>
   );
-}
+}
