@@ -2,6 +2,7 @@ import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Button } from '../components/ui/Button';
 import { motion } from 'framer-motion';
+import { ArrowLeft } from 'lucide-react';
 
 export function Login() {
   const navigate = useNavigate();
